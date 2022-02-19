@@ -1,9 +1,9 @@
-# Introduction
+# README
 
 I put all my notes for algorithms here.
 
-* Gitbook: [https://liuzhenglaichn.gitbook.io/algorithm/](https://liuzhenglaichn.gitbook.io/algorithm/)
-* Github Repo: [https://github.com/lzl124631x/algorithm](https://github.com/lzl124631x/algorithm)
+* Gitbook:&#x20;
+* Github Repo:&#x20;
 
 ## Remember during interview
 
@@ -15,5 +15,6 @@ I put all my notes for algorithms here.
 ## Resources
 
 William Fiset
+
 * https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw
 * https://github.com/williamfiset/Algorithms
