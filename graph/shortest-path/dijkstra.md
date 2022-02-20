@@ -4,26 +4,29 @@ Dijkstra's original algorithm found the shortest path between two given nodes, b
 
 It's a **greedy** BFS algorithm.
 
-It does **NOT** support negative edge.
+<mark style="color:red;">It does</mark> <mark style="color:red;"></mark><mark style="color:red;">**NOT**</mark> <mark style="color:red;"></mark><mark style="color:red;">support negative edge.</mark>
 
 Note that we should only use this algorithm on a **weighted** graph. If it's an unweighted graph, just use BFS.
 
 ## Algorithm
 
-**Summary: Use heap to store the cost of nodes. Each time pop the heap top node, whose shortest path is determimed once popped, and use its outbound edges to relax its neighbors and push the relaxed neighbors into the heap.**
+**Summary: Use heap to store the cost of nodes. Each time pop the heap top node, whose shortest path is determined once popped, and use its outbound edges to relax its neighbors and push the relaxed neighbors into the heap.**
 
 Given `V` vertices and `E` edges. The all weights of all edges are non-negative. Find the smallest distance from a source node `S` to all other nodes.
 
 We split the `V` vertices into two sets:
+
 * `A`, visited nodes, i.e. those whose shortest path is already determined.
 * `B`, unvisited nodes.
 
 Initially:
+
 * `A` is empty and `B` contains all the vertices
 * The distance of the source vertex is `0`, and `Infinity` for all other vertices.
 
 Then we keep the following operations until all vertices are visited:
-1. Find the vertice with the smallest distance from `B`, say `u`. Move `u` from `B` to `A`.
+
+1. Find the vertex with the smallest distance from `B`, say `u`. Move `u` from `B` to `A`.
 2. For each outbound edge from `u` `(u, v, w)` (`v` is the destination verte, `w` is the weight), try to relax `v` using `u` and `w` -- If `dist[v] > dist[u] + w`, then `dist[v] = dist[u] + w`.
 
 ## Why no negative edge?
@@ -36,7 +39,7 @@ But if there are negative edges, this `u` can be updated again later using negat
 
 The most basic implementation of Dijkstra algorithm has time complexity `O(V^2)`. Here I only talk about the solution using `priority_queue`.
 
-Let `pq` be a `priority_queue` of pairs of the cost \(i.e. the length of the shortest path from `src`\) and the vertex index. The element with the smallest cost is at the top of the queue \(i.e. min-heap\). Initially `pq` only has `(0, src)` in it.
+Let `pq` be a `priority_queue` of pairs of the cost (i.e. the length of the shortest path from `src`) and the vertex index. The element with the smallest cost is at the top of the queue (i.e. min-heap). Initially `pq` only has `(0, src)` in it.
 
 Let `dist[u]` be the cost of `u`. Initially `dist[src] = 0` and `dist[u] = INF` for all other vertices.
 
@@ -112,5 +115,4 @@ vector<int> dijkstra(Graph &graph, int N, int source) {
 
 ## Reference
 
-* [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-
+* [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra's\_algorithm)
