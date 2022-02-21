@@ -1,6 +1,6 @@
 # README
 
-All credit to [liuzhenglaichn.gitbook.io/algorithm/](https://liuzhenglaichn.gitbook.io/algorithm/), I found it very useful. You can checkout the original I you like.
+All credit to [liuzhenglaichn.gitbook.io/algorithm/](https://liuzhenglaichn.gitbook.io/algorithm/), I found it very useful. You can checkout the original If you like.
 
 In this repo I have modified the above with my observations and notes.
 
@@ -17,3 +17,4 @@ William Fiset
 
 * https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw
 * https://github.com/williamfiset/Algorithms
+*
