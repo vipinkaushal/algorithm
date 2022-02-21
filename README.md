@@ -1,9 +1,8 @@
 # README
 
-I put all my notes for algorithms here.
+All credit to [liuzhenglaichn.gitbook.io/algorithm/](https://liuzhenglaichn.gitbook.io/algorithm/), I found it very useful. You can checkout the original I you like.
 
-* Gitbook:&#x20;
-* Github Repo:&#x20;
+In this repo I have modified the above with my observations and notes.
 
 ## Remember during interview
 
