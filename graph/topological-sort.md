@@ -1,6 +1,6 @@
 # Topological Sort
 
-Topological sorting for Directed Acyclic Graph \(DAG\) is a linear ordering of vertices such that for every directed edge `uv`, vertex `u` comes before `v` in the ordering.
+Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge `uv`, vertex `u` comes before `v` in the ordering.
 
 ## Implementation
 
@@ -8,7 +8,7 @@ We represent the graph `G` as `unordered_map<int, vector<int>>` which is a map f
 
 If `u` must happens before `v`, or in other words, `v` is dependent on `u`, then there is a directed edge `u -> v`, where `u` is the source node, and `v` is the destination node.
 
-### Kahn Algorithm \(BFS\)
+### Kahn Algorithm (BFS)
 
 It requires additional space for storing the `indegree`s of the nodes.
 
@@ -56,7 +56,7 @@ A DFS version topological sort must be a **Post-order DFS + Memoization**.
 
 Each vertex has three states:
 
-1. -1 =  unvisited
+1. \-1 = unvisited
 2. 0 = being visited in the current DFS session. If we visit a node with state 0, it means there is a circle in the graph.
 3. 1 = has been visited in a prevous DFS session and this vertex is not in a circle.
 
@@ -95,11 +95,29 @@ public:
 };
 ```
 
+### Limitation of the Algorithm <a href="#limitation-of-the-algorithm" id="limitation-of-the-algorithm"></a>
+
+* “Topological sorting” only works with graphs that are directed and acyclic.
+* There must be at least one vertex in the “graph” with an “in-degree” of 0. If all vertices in the “graph” have a non-zero “in-degree”, then all vertices need at least one vertex as a predecessor. In this case, no vertex can serve as the starting vertex.
+
+### Complexity Analysis <a href="#complexity-analysis" id="complexity-analysis"></a>
+
+V represents the number of vertices, and E represents the number of edges.
+
+* Time Complexity: O(V + E).
+  * First, we will build an adjacency list. This allows us to efficiently check which courses depend on each prerequisite course. Building the adjacency list will take O(E) time, as we must iterate over all edges.
+  * Next, we will repeatedly visit each course (vertex) with an in-degree of zero and decrement the in-degree of all courses that have this course as a prerequisite (outgoing edges). In the worst-case scenario, we will visit every vertex and decrement every outgoing edge once. Thus, this part will take O(V + E) time.
+  * Therefore, the total time complexity is O(E) + O(V + E) = O(V + E).
+* Space Complexity: O(V+E).
+  * The adjacency list uses O(E) space.
+  * Storing the in-degree for each vertex requires O(V) space.
+  * The queue can contain at most VV nodes, so the queue also requires O(V) space.
+
 ## Problems
 
-* [207. Course Schedule \(Medium\)](https://leetcode.com/problems/course-schedule/)
-* [210. Course Schedule II \(Medium\)](https://leetcode.com/problems/course-schedule-ii/)
-* [329. Longest Increasing Path in a Matrix \(Hard\)](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
+* [207. Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/)
+* [210. Course Schedule II (Medium)](https://leetcode.com/problems/course-schedule-ii/)
+* [329. Longest Increasing Path in a Matrix (Hard)](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
 * [Stable Wall](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003379bb)
 * [Fox And Names](https://codeforces.com/contest/510/problem/C)
 * [802. Find Eventual Safe States (Medium)](https://leetcode.com/problems/find-eventual-safe-states/)
