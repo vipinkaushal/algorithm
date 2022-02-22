@@ -17,6 +17,36 @@ Although the “Bellman-Ford algorithm” cannot find the shortest path in a gra
 
 ## Implementation
 
+#### Basic implementation:
+
+This implementation uses two arrays as extra space can be use in scenarios where we need to satisfy some constraint based on the number of edges e.g. use exactly k edges.
+
+```cpp
+ vector<int> bellmanFord(vector<vector<int>>& edges, int V, int src) {               vector<int> previous(n, INT_MAX);
+        vector<int> previous(n, INT_MAX);
+        vector<int> current(n, INT_MAX);
+        previous[src] = 0;
+        current[src] = 0;
+        for (int i = 1; i < V; i++) {
+            for (vector<int>& edge: edges) {
+                int u = edge[0];int v = edge[1]; int w = edge[2];
+                int previous_u = previous[u;
+                int current_v = current[v];
+                if(previous_u == INT_MAX) continue;
+                if (previous_u + w < current_v) {
+                    current_v = previous_u + w;
+                }
+            }
+            previous.swap(current);
+        }
+        return previous;
+    }
+```
+
+
+
+#### Improved Implementation:
+
 Let `dist[u]` be the length of the shortest path from `src` to `u`.
 
 Initially `dist[src] = 0` and `dist[u] = INF` for all other vertices.
