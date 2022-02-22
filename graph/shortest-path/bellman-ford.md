@@ -22,7 +22,7 @@ Although the “Bellman-Ford algorithm” cannot find the shortest path in a gra
 This implementation uses two arrays as extra space can be use in scenarios where we need to satisfy some constraint based on the number of edges e.g. use exactly k edges.
 
 ```cpp
- vector<int> bellmanFord(vector<vector<int>>& edges, int V, int src) {               vector<int> previous(n, INT_MAX);
+ vector<int> bellmanFord(vector<vector<int>>& edges, int V, int src) {
         vector<int> previous(n, INT_MAX);
         vector<int> current(n, INT_MAX);
         previous[src] = 0;
