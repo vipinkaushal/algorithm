@@ -81,6 +81,7 @@
   * [Sieve Of Eratosthenes](math/sieve-of-eratosthenes.md)
   * [Stars And Bars](math/stars-and-bars.md)
   * [Sum Of Sequence](math/sum-of-sequence.md)
+  * [General](math/general.md)
 * [Miscellaneous](miscellaneous/README.md)
   * [Bin Packing](miscellaneous/bin-packing.md)
   * [Palindrome](miscellaneous/palindrome.md)
